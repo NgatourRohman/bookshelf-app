@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bookshelf App</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script defer src="js/main.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <div class="book-icon">
+        <a class="book-circle" href="#form">
+          <i class="fas fa-book"></i>
+          <h1>Bookshelf App</h1>
+        </a>
+      </div>
+      <div class="user-icon">
+        <a href="#search">
+          <i class="fas fa-user-circle"></i>
+          <span class="library-nav">My Library</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero-container">
+      <div class="left-container">
+        <section id="form" class="add-book-form">
+          <div class="container form-container">
+            <h2>Tambah Buku Baru</h2>
+            <form class="book-form" id="bookForm" data-testid="bookForm">
+              <div>
+                <label for="bookFormTitle">Judul</label>
+                <div class="input-wrapper">
+                  <input class="input" id="bookFormTitle" type="text" required data-testid="bookFormTitleInput" />
+                </div>
+              </div>
+              <div>
+                <label for="bookFormAuthor">Penulis</label>
+                <div class="input-wrapper">
+                  <input class="input" id="bookFormAuthor" type="text" required data-testid="bookFormAuthorInput" />
+                </div>
+              </div>
+              <div>
+                <label for="bookFormYear">Tahun</label>
+              </div>
+              <div class="bottom-input">
+                <div class="book-year-wrapper">
+                  <input class="book-year" id="bookFormYear" type="number" required data-testid="bookFormYearInput" />
+                </div>
+                <div class="checkbox-group">
+                  <input class="checkbox" id="bookFormIsComplete" type="checkbox"
+                    data-testid="bookFormIsCompleteCheckbox" />
+                  <label for="bookFormIsComplete">Selesai dibaca</label>
+                </div>
+              </div>
+              <button class="btn-form" id="bookFormSubmit" type="submit" data-testid="bookFormSubmitButton">
+                Masukkan Buku
+              </button>
+            </form>
+          </div>
+        </section>
+      </div>
+
+      <div class="right-container">
+        <section id="search" class="search">
+          <div class="container search-container">
+            <h1 class="hero-title">Lacak perjalanan membaca Anda</h1>
+            <p>Atur perpustakaan pribadi Anda, tetapkan tujuan membaca, dan jangan pernah kehilangan jejak cerita yang
+              bagus
+              lagi.</p>
+            <form class="search-form" id="searchBook" data-testid="searchBookForm">
+              <div class="search-wrapper">
+                <span class="search-icon"><i class="fas fa-search"></i></span>
+                <input class="search-input" id="searchBookTitle" type="text" data-testid="searchBookFormTitleInput"
+                  placeholder="Cari berdasarkan judul atau penulis..." aria-label="Search books" />
+              </div>
+              <button class="search-button" id="searchSubmit" type="submit" data-testid="searchBookFormSubmitButton">
+                Cari
+              </button>
+            </form>
+          </div>
+          <img src="img/book.png" alt="book-visual">
+        </section>
+
+        <section class="stats">
+          <div class="stat-card">
+            <p class="stat-label">Jumlah Buku</p>
+            <h3 class="stat-number-total">0</h3>
+          </div>
+
+          <div class="stat-card">
+            <p class="stat-label">Belum Selesai</p>
+            <h3 class="stat-number-incompleted">0</h3>
+          </div>
+
+          <div class="stat-card">
+            <p class="stat-label">Selesai</p>
+            <h3 class="stat-number-completed">0</h3>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <section class="not-completed">
+      <div class="section-title">
+        <i class="fas fa-book-open"></i>
+        <h2>Belum selesai dibaca</h2>
+        <span class="book-count">0 BUKU</span>
+      </div>
+
+      <div class="book-wrapper" id="incompleteBookList" data-testid="incompleteBookList">
+        <div class="book-content" data-bookid="123123123" data-testid="bookItem">
+          <h3 class="book-title" data-testid="bookItemTitle">Judul Buku 1</h3>
+          <div class="author-container">
+            <p class="book-author" data-testid="bookItemAuthor">Penulis: Penulis Buku 1</p>
+            <p class="book-item-year" data-testid="bookItemYear">Tahun: 2030</p>
+          </div>
+          <div class="book-actions">
+            <button class="btn-outline" data-testid="bookItemIsCompleteButton">
+              <span class="material-symbols--check-circle-outline"></span>Selesai dibaca
+            </button>
+            <div class="btn-group">
+              <button class="trash-btn" data-testid="bookItemDeleteButton"><i class="fas fa-trash">Hapus
+                  Buku</i></button>
+              <button class="edit-btn" data-testid="bookItemEditButton"><i class="fas fa-edit"></i>Edit Buku</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="completed">
+      <div class="section-title">
+        <i class="fas fa-check-circle"></i>
+        <h2>Selesai dibaca</h2>
+        <span class="book-count">0 BUKU</span>
+      </div>
+
+      <div class="book-wrapper" id="completeBookList" data-testid="completeBookList">
+        <div class="book-content" data-bookid="456456456" data-testid="bookItem">
+          <h3 class="book-title" data-testid="bookItemTitle">Judul Buku 2</h3>
+          <div class="author-container">
+            <p class="book-author" data-testid="bookItemAuthor">Penulis: Penulis Buku 2</p>
+            <p class="book-item-year" data-testid="bookItemYear">Tahun: 2030</p>
+          </div>
+          <div class="book-actions">
+            <button class="btn-outline" data-testid="bookItemIsCompleteButton">
+              <span class="gravity-ui--clock-arrow-rotate-left"></span>Belum selesai dibaca
+            </button>
+            <div class="btn-group">
+              <button class="trash-btn" data-testid="bookItemDeleteButton"><i class="fas fa-trash"></i>Hapus
+                Buku</button>
+              <button class="edit-btn" data-testid="bookItemEditButton"><i class="fas fa-edit"></i>Edit Buku</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="notification-container"></div>
+</body>
+
+</html>
