@@ -1,8 +1,10 @@
-# Bookshelf App
+# 📚 Bookshelf App
 
 A simple web application to manage your personal book collection using Web Storage (localStorage).
 
-## Features
+![Bookshelf Screenshot](./img/bookshelf.png)
+
+## ✨ Features
 - Add new books (Title, Author, Year)
 - Edit existing books
 - Delete books
@@ -12,11 +14,15 @@ A simple web application to manage your personal book collection using Web Stora
 - Notifications for user actions
 - Data stored locally in browser using localStorage
 
-## Tech Stack
+## 🛠️ Tech Stack
 - HTML
 - CSS
 - JavaScript
 - Web Storage API (localStorage)
 
-## Purpose
+## 📋 Purpose
 Built as part of Dicoding "Learn Front-End Web Development for Beginners" course to practice creating interactive front-end web applications.
+
+## 🚀 Live Demo
+
+[View Live Demo](https://ngatourrohman.github.io/bookshelf-app)
